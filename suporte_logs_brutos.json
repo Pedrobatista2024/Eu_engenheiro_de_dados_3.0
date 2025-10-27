@@ -1,0 +1,37 @@
+{
+    "tickets": [
+        {
+            "ticket_id": 5001,
+            "status": "Resolvido",
+            "tempo_resposta_min": 15,
+            "cliente": "Alpha Corp",
+            "detalhes_suporte": {
+                "agente_id": "T001",
+                "categoria": "Software",
+                "prioridade": "Alta"
+            }
+        },
+        {
+            "ticket_id": 5002,
+            "status": "Aberto",
+            "tempo_resposta_min": null,
+            "cliente": "Beta Ltda",
+            "detalhes_suporte": {
+                "agente_id": "T002",
+                "categoria": "Hardware",
+                "prioridade": "M\u00e9dia"
+            }
+        },
+        {
+            "ticket_id": 5003,
+            "status": "Resolvido",
+            "tempo_resposta_min": 5,
+            "cliente": "Gama Consultoria",
+            "detalhes_suporte": {
+                "agente_id": "T001",
+                "categoria": "Rede",
+                "prioridade": "Baixa"
+            }
+        }
+    ]
+}

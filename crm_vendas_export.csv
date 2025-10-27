@@ -1,0 +1,8 @@
+lead_id;data_criacao;data_conversao;valor_contrato;vendedor;status_lead
+1001;2025-10-15;2025-10-20;5500.0;Ana B.;Fechado
+1002;2025-10-16;2025-10-23;12000.0;Carlos D.;Fechado
+1003;2025-10-17;;;Ana B.;Em Negociação
+1004;2025-10-18;2025-10-24;8000.0;Erica F.;Fechado
+1005;2025-10-19;;;Erica F.;Perdido
+1006;2025-10-20;2025-10-24;3200.0;Gustavo H.;Fechado
+1007;2025-10-21;2025-10-24;9800.0;Ana B.;Fechado
