@@ -55,3 +55,9 @@ except ImportError:
     print("Por favor, instale-a primeiro: pip install sqlalchemy")
 except Exception as e:
     print(f"\n[ERRO] Ocorreu um erro ao aplicar os índices: {e}")
+
+#Índice em data_conversao (Otimização de Tempo): O LTV é quase sempre filtrado por tempo (ex: "LTV dos últimos 6 meses", "LTV do Q4"). Isso exige um WHERE data_conversao BETWEEN ... ou GROUP BY mes/ano. Sem um índice, o banco de dados teria que ler todas as linhas da tabela (um "Table Scan") para encontrar o período. O índice de data age como um sumário de agenda, permitindo ao banco "pular" instantaneamente para o período de tempo exato que você pediu.
+#
+#Índice em valor_contrato (Otimização de Métrica): O cálculo do LTV exige agregações financeiras, como SUM(valor_contrato) ou AVG(valor_contrato). Quando o banco de dados já filtrou pelo tempo (usando o primeiro índice), ele ainda precisa somar os valores. O índice na coluna valor_contrato permite que o banco acesse esses valores de forma muito mais rápida e eficiente, pois os dados já estão pré-ordenados ou estruturados no índice.
+#
+#Em resumo: O índice de data acelera o WHERE (o filtro), e o índice de valor acelera o SUM (o cálculo). Juntos, eles tornam as consultas de LTV ordens de magnitude mais rápidas.
