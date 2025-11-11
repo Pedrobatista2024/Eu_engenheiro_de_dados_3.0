@@ -173,3 +173,7 @@ print("\n--- Resultado Final: ft_negocio.head() (Tabela de Fato Unificada) ---")
 print(ft_negocio.head())
 
 print(f"\n[SUCESSO] Modelagem Dimensional concluída. Tabela de Fato pronta com as FKs.")
+
+dim_vendedor.to_csv('dim_vendedor.csv', index=False)
+dim_agente_suporte.to_csv('dim_agente_suporte.csv', index=False)
+ft_negocio.to_csv('ft_negocio.csv', index=False)
